@@ -16,7 +16,7 @@
     var clicks = 0;
 
     function lampOn() {
-      console.log("Lamp is is on");
+      console.log("Lamp is on");
       clicks=1;
       $.post("https://api.particle.io/v1/devices/27001d000547343138333038/led?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
         value: "on"
@@ -24,7 +24,7 @@
     }
 
     function lampOff() {
-      console.log("LED is off");
+      console.log("Lamp is off");
       clicks=0;
       $.post("https://api.particle.io/v1/devices/27001d000547343138333038/led?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
         value: "off"
