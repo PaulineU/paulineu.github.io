@@ -10,7 +10,7 @@
 <body bgcolor="black">
   <button type="lampOn" onclick="lampOn()">On</button>
   <button type="lampOff" onclick="lampOff()">Off</button>
-  <button type="turnOn" onclick="turnOn()">toggle</button>
+  <!-- <button type="turnOn" onclick="turnOn()">toggle</button> -->
 
   <script>
     var clicks = 0;
@@ -30,20 +30,20 @@
         value: "off"
       });
     }
-
-    function turnOn() {
-      if (clicks % 2 == 0) {
-        console.log("Lamp toggle on");
-        $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
-          value: "on"
-        });
-        clicks++;
-      } else {
-        console.log("Lamp toggle off");
-        clicks++;
-        $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
-          value: "off"
-        });
-      }
-    }
+    //
+    // function turnOn() {
+    //   if (clicks % 2 == 0) {
+    //     console.log("Lamp toggle on");
+    //     $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
+    //       value: "on"
+    //     });
+    //     clicks++;
+    //   } else {
+    //     console.log("Lamp toggle off");
+    //     clicks++;
+    //     $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
+    //       value: "off"
+    //     });
+    //   }
+    // }
   </script>
