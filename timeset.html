@@ -10,7 +10,12 @@
 <body bgcolor="black">
   <button type="lampOn" onclick="lampOn()">On</button>
   <button type="lampOff" onclick="lampOff()">Off</button>
-  <!-- <button type="turnOn" onclick="turnOn()">toggle</button> -->
+
+  <input id="inputNum">
+   <button type="button" onclick="myFunction()">I did it</button>
+
+
+ <p id="demo"></p>
 
   <script>
     var clicks = 0;
@@ -30,20 +35,21 @@
         value: "off"
       });
     }
-    //
-    // function turnOn() {
-    //   if (clicks % 2 == 0) {
-    //     console.log("Lamp toggle on");
-    //     $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
-    //       value: "on"
-    //     });
-    //     clicks++;
-    //   } else {
-    //     console.log("Lamp toggle off");
-    //     clicks++;
-    //     $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
-    //       value: "off"
-    //     });
-    //   }
-    // }
+    function myFunction() {
+      var x, text;
+
+      // Get the value of the input field with id="numb"
+      x = document.getElementById("inputNum").value;
+
+      // If x is less than 10 or greater than 20
+      if (x > 24) {
+        text = "Invalid hour!";
+      //if x is not a number
+      } else if (isNaN(x)) {
+        text = "What? That's not even a number!";
+      } else {
+        text = "Hour set!";
+      }
+      document.getElementById("demo").innerHTML = text;
+    }
   </script>
