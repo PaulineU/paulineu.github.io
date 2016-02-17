@@ -7,7 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 
-<body bgcolor="black">
+<body bgcolor="white">
   <button type="lampOn" onclick="lampOn()">On</button>
   <button type="lampOff" onclick="lampOff()">Off</button>
 
@@ -19,6 +19,7 @@
 
   <script>
     var clicks = 0;
+    var hour;
 
     function lampOn() {
       console.log("Lamp is on");
@@ -49,6 +50,10 @@
         text = "What? That's not even a number!";
       } else {
         text = "Hour set!";
+        hour = x;
+        $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
+          value: hour;
+        });
       }
       document.getElementById("demo").innerHTML = text;
     }
