@@ -2,8 +2,6 @@
 // in the code below. It must be in the project's "data" folder.
 
 Table table;    //table object for organizing date
-float x = 0;      //variables for x and y
-float y = 0;
 int ihour = 7;
 int iminute = 30;
 int hour;
@@ -17,10 +15,6 @@ int oppbg = 255;
 float oppScaled;
 float currbg;
 boolean first = true;
-boolean done1 = false;
-boolean done2 = false;
-boolean done3 = false;
-boolean done4 = false;
 boolean changetime = false;
 int prevtime;
 int currtime;
@@ -34,6 +28,7 @@ void setup() {
   textSize(25);
   table = loadTable("soundlev.csv");
   people = new ArrayList<People>();
+  
 }
 
 void draw() {
@@ -51,7 +46,7 @@ void draw() {
   {
     background(255 - oppScaled);
     currbg = (255 - oppScaled);
-  }
+  } 
   for (int i = people.size() - 1; i >= 0; i--) //goes through the array
   {
     People person = people.get(i); //for each specific person
@@ -60,6 +55,7 @@ void draw() {
     person.checkPosition(); //stop if at end
   }
   fill(255-currbg);
+  //clock
   mnts = map(bg, 0, width, (initialtime/60000), (totaltime/60000));
   hour = ihour + floor(mnts/60);
   if ((iminute + floor(mnts)) == 60)
@@ -89,6 +85,7 @@ void draw() {
   {
     text(minute, 35, 30);
   }
+  //doors
   stroke(2);
   fill(255);
   rect(width/12, height/2, width/12, width/24);
@@ -145,18 +142,6 @@ void draw() {
   }
 }
 
-
-// old visualization code
-//      {
-//        fill(255, 0, 0);
-//        noStroke();
-//        ellipse(127*width/160, height/2, width/24, width/24);
-//      } else 
-//      {
-//        noStroke();
-//        fill(currbg);
-//        ellipse(127*width/160, height/2, (width/24)+5, (width/24)+5);
-//      }
 class People
 {
   PVector position;
