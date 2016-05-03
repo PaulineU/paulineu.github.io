@@ -11,7 +11,9 @@
   <button type="lampOn" onclick="lampOn()">On</button>
   <button type="lampOff" onclick="lampOff()">Off</button>
   <!-- <button type="turnOn" onclick="turnOn()">toggle</button> -->
-
+  <input id ="inputNum">
+  <button type="botton" onClick="inputNum()">Enter</button>
+  <p id="demo"></p>
   <script>
     var clicks = 0;
 
@@ -29,6 +31,13 @@
       $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
         value: "off"
       });
+    }
+
+    function inputNum() {
+    var x, text;
+    x = document.getElementById("inputNum").value;
+    text = "Thanks!";
+    document.getElementById("demo").innerHTML = text;
     }
     //
     // function turnOn() {

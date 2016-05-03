@@ -105,10 +105,6 @@ void draw() {
     //-----scale the data-----
 
     float timeScaled = map(time, initialtime, totaltime, 0, width); 
-    float sensor1Scaled = map(sensor1, 0, 110, 10, 180);
-    float sensor2Scaled = map(sensor1, 0, 110, 10, 180);
-    float sensor3Scaled = map(sensor1, 0, 110, 10, 180);
-    float sensor4Scaled = map(sensor1, 0, 110, 10, 180);
     currtime = mouseX;
     if (currtime != prevtime)
     {
