@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <style>
+    body {
+      margin: 1em auto;
+      max-width: 45em;
+      background: lightblue;
+    }
+    input[type=range] {
+      -webkit-appearance: none;
+      background-color: silver;
+      width: 400px;
+      height: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Control Servo Rotation</h1>
+  <input type="range" min="0" max="180" value="0" onchange="showValue(this.value)" />
+  <span id="range">0</span>
+  <script type="text/javascript">
+    function showValue(newValue) {
+      console.log("servo turning");
+      document.getElementById("range").innerHTML = newValue;
+      $.post("https://api.particle.io/v1/devices/deviceID/setpos?access_token=", {
+        value: newValue
+      });
+    }
+  </script>
+</body>
+
+</html>
