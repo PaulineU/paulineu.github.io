@@ -9,7 +9,7 @@
     max-width: 45em;
     background: lightblue;
     }
-    input[type=hour] {
+    input[type=range] {
       -webkit-appearance: none;
       background-color: silver;
       width: 400px;
@@ -44,12 +44,12 @@
     } -->
     <body>
     <h1>Hour Control</h1>
-    <input type="hour" min="0" max="23" value="0" onchange="showValue(this.value)" />
-    <span id="hour">0</span>
+    <input type="range" min="0" max="23" value="0" onchange="showValue(this.value)" />
+    <span id="range">0</span>
     <script type="text/javascript">
       function showValue(newValue) {
         console.log("hour set");
-        document.getElementById("hour").innerHTML = newValue;
+        document.getElementById("range").innerHTML = newValue;
     $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
       value: newValue
     });
