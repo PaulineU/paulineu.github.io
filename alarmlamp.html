@@ -2,6 +2,14 @@
 <html>
 
 <head>
+  <style>
+    input[type=hour] {
+      -webkit-appearance: none;
+      background-color: silver;
+      width: 400px;
+      height: 20px;
+    }
+  </style>
   <meta charset="utf-8">
   <title>Lamp Alarm Clock</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -31,12 +39,22 @@
         value: "off"
       });
     }
-
-    function inputNum() {
-    text = "Thanks!";
-    document.getElementById("demo").innerHTML = newValue;
+    <body>
+    <input type="hour" min="0" max="23" value="0" onchange="showValue(this.value)" />
+    <span id="hour">0</span>
+    <script type="text/javascript">
+      function showValue(newValue) {
+        console.log("hour set");
+        document.getElementById("hour").innerHTML = newValue;
     $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
-    value: newValue
+      value: newValue
     });
+  }
+    // function inputNum() {
+    // text = "Thanks!";
+    // document.getElementById("demo").innerHTML = newValue;
+    // $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
+    // value: newValue
+    // });
   }
   </script>
