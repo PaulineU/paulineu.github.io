@@ -25,7 +25,7 @@
     function showValue(newValue) {
       console.log("servo turning");
       document.getElementById("range").innerHTML = newValue;
-      $.post("https://api.particle.io/v1/devices/deviceID/setpos?access_token=", {
+      $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
         value: newValue
       });
     }
