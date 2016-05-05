@@ -3,14 +3,13 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Basic IOT button</title>
+  <title>Lamp Alarm Clock</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 
 <body bgcolor="black">
   <button type="lampOn" onclick="lampOn()">On</button>
   <button type="lampOff" onclick="lampOff()">Off</button>
-  <!-- <button type="turnOn" onclick="turnOn()">toggle</button> -->
   <input id ="inputNum">
   <button type="button" onclick="inputNum()">Enter</button>
   <p id="demo"></p>
@@ -34,25 +33,10 @@
     }
 
     function inputNum() {
-    var x, text;
-    x = document.getElementById("inputNum").value;
     text = "Thanks!";
-    document.getElementById("demo").innerHTML = text;
-    }
-    //
-    // function turnOn() {
-    //   if (clicks % 2 == 0) {
-    //     console.log("Lamp toggle on");
-    //     $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
-    //       value: "on"
-    //     });
-    //     clicks++;
-    //   } else {
-    //     console.log("Lamp toggle off");
-    //     clicks++;
-    //     $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
-    //       value: "off"
-    //     });
-    //   }
-    // }
+    document.getElementById("demo").innerHTML = newValue;
+    $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
+    value: newValue
+    });
+  }
   </script>
