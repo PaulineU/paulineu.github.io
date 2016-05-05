@@ -17,31 +17,6 @@
     }
   </style>
 </head>
-
-  <!-- <meta charset="utf-8">
-  <title>Lamp Alarm Clock</title>
-
-<body bgcolor="black">
-  <button type="lampOn" onclick="lampOn()">On</button>
-  <button type="lampOff" onclick="lampOff()">Off</button>
-  <script>
-    var clicks = 0;
-
-    function lampOn() {
-      console.log("Lamp is on");
-      clicks=1;
-      $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
-        value: "on"
-      });
-    }
-
-    function lampOff() {
-      console.log("Lamp is off");
-      clicks=0;
-      $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
-        value: "off"
-      });
-    } -->
     <body>
     <h1>Hour Control</h1>
     <input type="range" min="0" max="23" value="0" onchange="showValue(this.value)" />
@@ -54,6 +29,17 @@
       value: newValue
     });
   }
+    <h2>Hour Control</h2>
+    <input type="range" min="0" max="23" value="0" onchange="showValue(this.value)" />
+    <span id="range">0</span>
+    <script type="text/javascript">
+    function showValue(newValue) {
+      console.log("hour set");
+      document.getElementById("range").innerHTML = newValue;
+      $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
+    value: newValue
+    });
+}
   </script>
 </body>
 </html>
@@ -65,3 +51,28 @@
 // value: newValue
 // });
 // }
+
+<!-- <meta charset="utf-8">
+<title>Lamp Alarm Clock</title>
+
+<body bgcolor="black">
+<button type="lampOn" onclick="lampOn()">On</button>
+<button type="lampOff" onclick="lampOff()">Off</button>
+<script>
+  var clicks = 0;
+
+  function lampOn() {
+    console.log("Lamp is on");
+    clicks=1;
+    $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
+      value: "on"
+    });
+  }
+
+  function lampOff() {
+    console.log("Lamp is off");
+    clicks=0;
+    $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
+      value: "off"
+    });
+  } -->
