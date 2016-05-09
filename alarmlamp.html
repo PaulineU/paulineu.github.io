@@ -20,6 +20,7 @@
     <body>
     <h1>Hour Control</h1>
     <input type="range" data-show-value="true" data-popup-enabled="true" min="0" max="23" value="0" onchange="showValue(this.value)" />
+    <span id="range">0</span>
     <script type="text/javascript">
       function showValue(newValue) {
         console.log(newValue);
