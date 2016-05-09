@@ -19,12 +19,10 @@
 </head>
     <body>
     <h1>Hour Control</h1>
-    <input type="range" min="0" max="23" value="0" onchange="showValue(this.value)" />
-    <span id="range">5</span>
+    <input type="range" data-show-value="true" min="0" max="23" value="0" onchange="showValue(this.value)" />
     <script type="text/javascript">
-
       function showValue(newValue) {
-        console.log("hour set");
+        console.log(newValue);
         document.getElementById("range").innerHTML = newValue;
     $.post("https://api.particle.io/v1/devices/27001d000547343138333038/hourcheck?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
       value: newValue
