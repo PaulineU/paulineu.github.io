@@ -19,7 +19,9 @@
 </head>
     <body>
     <h1>Hour Control</h1>
-    <input type="range" min="0" max="23" value="0" onchange="showValue(this.value)" />
+    <form method="post" action="demoform.asp">
+      <label for="hour"Hour:</label>
+    <input type="range" data-show-value="true" name="hour" id="hour" min="0" max="23" value="0" onchange="showValue(this.value)" />
     <span id="range">0</span>
     <script type="text/javascript">
       function showValue(newValue) {
