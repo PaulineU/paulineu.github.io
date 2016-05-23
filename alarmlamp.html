@@ -18,10 +18,9 @@
   </style>
 </head>
     <body>
-    <h1>Hour Control</h1>
+    <h1>Set Hour</h1>
     <input id="inputHour">
     <button type="button" onclick="setHour()">Set Hour</button>
-    <p id="time"></p>
 
     <script>
     function setHour()
@@ -31,6 +30,20 @@
       value: hour
       });
     }
+    </script>
+    <h1>Set Minute</h1>
+    <input id="inputMinute">
+    <button type="button" onclick="setMinute()">Set Minute</button>
+    <script>
+    function setMinute()
+    {
+      minute = document.getElementById("inputMinute").value;
+      $.post("https://api.particle.io/v1/devices/27001d000547343138333038/setminute?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
+      value: minute
+      });
+    }
+    </script>
+
 
     // <!-- <input type="range" data-show-value="true" name="hour" id="hour" min="0" max="23" value="0" onchange="showValue(this.value)" />
     // <span id="range">0</span>
