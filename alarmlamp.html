@@ -8,13 +8,7 @@
     margin: 1em auto;
     max-width: 45em;
     background: lightblue;
-    }
-    /*input[type=range] {
-      -webkit-appearance: none;
-      background-color: silver;
-      width: 400px;
-      height: 20px;*/
-    }
+      }
   </style>
 </head>
     <body>
@@ -43,42 +37,5 @@
       });
     }
     </script>
-
-
-    <!-- <input type="range" data-show-value="true" name="hour" id="hour" min="0" max="23" value="0" onchange="showValue(this.value)" />
-    // <span id="range">0</span>
-    // <script type="text/javascript">
-    //   function showValue(newValue) {
-    //     console.log(newValue);
-    //     document.getElementById("range").innerHTML = newValue;
-    // $.post("https://api.particle.io/v1/devices/27001d000547343138333038/hourcheck?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
-    //   value: newValue
-    // });
-    // } -->
 </body>
 </html>
-
-<!-- <meta charset="utf-8">
-<title>Lamp Alarm Clock</title>
-
-<body bgcolor="black">
-<button type="lampOn" onclick="lampOn()">On</button>
-<button type="lampOff" onclick="lampOff()">Off</button>
-<script>
-  var clicks = 0;
-
-  function lampOn() {
-    console.log("Lamp is on");
-    clicks=1;
-    $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
-      value: "on"
-    });
-  }
-
-  function lampOff() {
-    console.log("Lamp is off");
-    clicks=0;
-    $.post("https://api.particle.io/v1/devices/27001d000547343138333038/lamp?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
-      value: "off"
-    });
-  } -->
