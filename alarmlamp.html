@@ -14,10 +14,10 @@
     <body>
     <h1>Set Hour</h1>
     <input id="inputHour">
-    <button type="button" onclick="setHour()">Enter</button>
+    <button type="button" onclick="setTime()">Enter</button>
 
     <script>
-    function setHour()
+    function setTime()
     {
       hour = document.getElementById("inputHour").value;
       $.post("https://api.particle.io/v1/devices/27001d000547343138333038/settime?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
@@ -27,9 +27,9 @@
     </script>
     <h1>Set Minute</h1>
     <input id="inputMinute">
-    <button type="button" onclick="setMinute()">Enter</button>
+    <button type="button" onclick="setTime()">Enter</button>
     <script>
-    function setMinute()
+    function setTime()
     {
       minute = document.getElementById("inputMinute").value;
       $.post("https://api.particle.io/v1/devices/27001d000547343138333038/settime?access_token=87a42cc6c9cd2c1ba8370d61a07e4e9add9cd536", {
